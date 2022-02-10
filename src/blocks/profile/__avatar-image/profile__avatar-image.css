@@ -1,0 +1,14 @@
+.profile__avatar-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+@media screen and (max-width: 710px) {
+  .profile__avatar-image {
+    width: 120px;
+    height: 120px;
+  }
+}

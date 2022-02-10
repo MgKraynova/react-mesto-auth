@@ -1,0 +1,32 @@
+.profile__wrapper::after {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #2a2c2f;
+  background-image: url("../../../images/profile__pencil.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 26px 26px;
+  opacity: 0;
+  z-index: 10;
+}
+
+.profile__wrapper:hover:after {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 710px) {
+  .profile__wrapper::after {
+    width: 120px;
+    height: 120px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

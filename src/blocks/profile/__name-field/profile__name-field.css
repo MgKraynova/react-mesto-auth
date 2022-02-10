@@ -1,0 +1,31 @@
+.profile__name-field {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 48px;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 9px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 350px;
+}
+
+@media screen and (max-width: 790px) {
+  .profile__name-field {
+    font-size: 30px;
+    line-height: 36px;
+  }
+}
+
+@media screen and (max-width: 710px) {
+  .profile__name-field {
+    font-size: 27px;
+    line-height: 33px;
+    text-align: center;
+    margin-bottom: 8px;
+    max-width: 189px;
+  }
+}
