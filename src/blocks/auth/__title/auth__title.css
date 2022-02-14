@@ -1,0 +1,21 @@
+.auth__title {
+    font-family: Inter, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 0;
+    margin-bottom: 45px;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+@media screen and (max-width: 430px) {
+    .auth__title {
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 35px;
+    }
+}

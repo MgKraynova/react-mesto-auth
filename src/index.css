@@ -7,6 +7,10 @@
 
 @import url(./blocks/header/header.css);
 @import url(./blocks/header/__logo/header__logo.css);
+@import url(./blocks/header/__link/header__link.css);
+@import url(./blocks/header/__container/header__container.css);
+@import url(./blocks/header/__text/header__text.css);
+@import url(./blocks/header/__link/_brightness/header__link_brightness_dark.css);
 
 @import url(./blocks/logo/logo.css);
 @import url(./blocks/button/button.css);
@@ -55,3 +59,14 @@
 @import url(./blocks/popup/__place-image/popup__place-image.css);
 @import url(./blocks/popup/__caption/popup__caption.css);
 @import url(./blocks/popup/__container/popup__container.css);
+@import url(./blocks/popup/__wrapper/popup__wrapper.css);
+@import url(./blocks/popup/__image/popup__image.css);
+@import url(./blocks/popup/__subtitle/popup__subtitle.css);
+
+@import url(./blocks/auth/auth.css);
+@import url(./blocks/auth/__title/auth__title.css);
+@import url(./blocks/auth/__fieldset/auth__fieldset.css);
+@import url(./blocks/auth/__input/auth__input.css);
+@import url(./blocks/auth/__button/auth__button.css);
+@import url(./blocks/auth/__text/auth__text.css);
+@import url(./blocks/auth/__link/auth__link.css);
