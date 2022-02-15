@@ -1,0 +1,4 @@
+.header__menu_active {
+    margin-top: 0;
+    transition: all .4s ease-in-out;
+}

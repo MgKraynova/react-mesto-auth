@@ -15,3 +15,10 @@
     align-items: center;
     box-sizing: border-box;
 }
+
+@media screen and (max-width: 579px) {
+    .popup__wrapper {
+        width: 280px;
+        height: 308px;
+    }
+}

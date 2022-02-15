@@ -5,3 +5,10 @@
     box-sizing: border-box;
     border-bottom: 1px solid rgba(84, 84, 84, 0.7);
 }
+
+@media screen and (max-width: 520px) {
+    .header {
+        /*padding-right: 30px;*/
+        flex-direction: column;
+    }
+}

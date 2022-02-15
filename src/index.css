@@ -9,8 +9,16 @@
 @import url(./blocks/header/__logo/header__logo.css);
 @import url(./blocks/header/__link/header__link.css);
 @import url(./blocks/header/__container/header__container.css);
+@import url(./blocks/header/__container/_invisible/header__container_invisible.css);
 @import url(./blocks/header/__text/header__text.css);
 @import url(./blocks/header/__link/_brightness/header__link_brightness_dark.css);
+@import url(./blocks/header/__link/_invisible/header__link_invisible.css);
+@import url(./blocks/header/__button/header__button.css);
+@import url(./blocks/header/__wrapper/header__wrapper.css);
+@import url(./blocks/header/__menu/header__menu.css);
+@import url(./blocks/header/__menu/_active/header__menu_active.css);
+@import url(./blocks/header/__button/_type/header__button_type_cross.css);
+@import url(./blocks/header/__button/_type/header__button_type_menu.css);
 
 @import url(./blocks/logo/logo.css);
 @import url(./blocks/button/button.css);

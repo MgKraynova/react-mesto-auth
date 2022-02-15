@@ -28,3 +28,9 @@
     padding-top: 28px;
   }
 }
+
+@media screen and (max-width: 520px) {
+  .page {
+    padding-top: 0;
+  }
+}

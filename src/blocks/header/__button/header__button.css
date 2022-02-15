@@ -1,0 +1,21 @@
+.header__button {
+    width: 24px;
+    height: 24px;
+    background: none;
+    border: none;
+    background-size: cover;
+    background-position: center;
+    display: none;
+    padding: 0;
+    transition: all .4s ease-in-out;
+}
+
+.header__button:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 520px) {
+    .header__button {
+        display: block;
+    }
+}

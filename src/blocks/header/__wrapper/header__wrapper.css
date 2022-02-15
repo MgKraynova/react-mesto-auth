@@ -1,0 +1,16 @@
+.header__wrapper {
+    width: 100%;
+    outline: 1px solid red;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 520px) {
+    .header__wrapper {
+        height: 83px;
+        box-sizing: border-box;
+        padding-top: 27px;
+        padding-right: 30px;
+    }
+}

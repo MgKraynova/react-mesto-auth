@@ -2,15 +2,10 @@ import React, {useContext, useEffect} from "react";
 import Card from "./Card";
 import Footer from "./Footer";
 import CurrentUserContext from "../contexts/CurrentUserContext";
-import api from "../utils/Api";
 
 function Main(props) {
 
     const currentUser = useContext(CurrentUserContext);
-
-    // useEffect(() => {
-    //     props.checkToken();
-    // }, []);
 
     return (
         <>

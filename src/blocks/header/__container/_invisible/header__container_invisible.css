@@ -1,0 +1,5 @@
+@media screen and (max-width: 520px) {
+    .header__container_invisible {
+        display: none;
+    }
+}
