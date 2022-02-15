@@ -56,19 +56,6 @@ function App() {
             .catch(handleApiError);
     }, []);
 
-    useEffect(() => {
-
-        function closePopupByPressEsc(event) {
-            if (event.key === 'Escape') {
-                closeAllPopups();
-            }
-        }
-
-        document.addEventListener('keydown', closePopupByPressEsc);
-
-        return () => document.removeEventListener('keydown', closePopupByPressEsc);
-    }, [])
-
     function handleDeleteButtonClick(card) {
         setSelectedCard(card);
         setIsDeletePopupOpened(true);
@@ -103,7 +90,7 @@ function App() {
     }
 
     function handleApiError(err) {
-        console.log('Ошибка. Запрос не выполнен: ', err);
+        console.log('Запрос не выполнен: ', err);
     }
 
     function handleRegisterUser(email, password) {

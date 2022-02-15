@@ -1,4 +1,4 @@
-import React, {useRef, useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import PopupWithForm from "./PopupWithForm";
 
 function AddPlacePopup(props) {
@@ -42,6 +42,7 @@ function AddPlacePopup(props) {
                     required
                     minLength="2"
                     maxLength="30"
+                    value={place}
                     onChange={handlePlaceInputChange}
                 />
                 <span className="popup__input-error popup-input-place-name-error"/>
@@ -52,6 +53,7 @@ function AddPlacePopup(props) {
                     type="url"
                     className="popup__input popup__input_content_image-link"
                     required
+                    value={placeLink}
                     onChange={handlePlaceLinkInputChange}
                 />
                 <span className="popup__input-error popup-input-image-link-error"/>
