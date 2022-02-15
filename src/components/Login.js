@@ -30,6 +30,7 @@ function Login(props) {
                         type="email"
                         required
                         name="email"
+                        autoComplete="on"
                         value={email}
                         onChange={handleEmailInputChange}
                     />
@@ -41,6 +42,7 @@ function Login(props) {
                         maxLength="12"
                         required
                         name="password"
+                        autoComplete="on"
                         value={password}
                         onChange={handlePasswordInputChange}
                     />

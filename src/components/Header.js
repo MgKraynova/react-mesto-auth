@@ -28,7 +28,7 @@ function Header(props) {
         <header className="header page__header">
             <div className={`header__menu ${isMenuOpen ? 'header__menu_active' : ''} `}>
                 <p className="header__text">{props.email ? props.email : ''}</p>
-                <Link className="header__link header__link_brightness_dark" onClick={handleSignOutClick}>Выйти</Link>
+                <a className="header__link header__link_brightness_dark" onClick={handleSignOutClick}>Выйти</a>
             </div>
             <div className="header__wrapper">
                 <img
@@ -46,8 +46,8 @@ function Header(props) {
                     {location.pathname === "/sign-in" &&
                     <Link to="/sign-up" className="header__link">Регистрация</Link>}
                     {location.pathname === "/" &&
-                    <Link className="header__link header__link_brightness_dark header__link_invisible"
-                          onClick={props.onSignOut}>Выйти</Link>}
+                    <a className="header__link header__link_brightness_dark header__link_invisible"
+                          onClick={props.onSignOut}>Выйти</a>}
                 </div>
             </div>
 

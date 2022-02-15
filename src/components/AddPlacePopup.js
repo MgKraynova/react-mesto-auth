@@ -1,23 +1,31 @@
-import React, {useRef, useEffect} from "react";
+import React, {useRef, useEffect, useState} from "react";
 import PopupWithForm from "./PopupWithForm";
 
 function AddPlacePopup(props) {
 
-    const placeRef = useRef();
-    const placeLinkRef = useRef();
+    const [place, setPlace] = useState('');
+    const [placeLink, setPlaceLink] = useState('');
+
+    function handlePlaceInputChange(e) {
+        setPlace(e.target.value);
+    }
+
+    function handlePlaceLinkInputChange(e) {
+        setPlaceLink(e.target.value);
+    }
 
     function handleSubmit(e) {
         e.preventDefault();
 
         props.onAddPlace({
-            name: placeRef.current.value,
-            link: placeLinkRef.current.value
+            name: place,
+            link: placeLink
         });
     }
 
     useEffect(() => {
-        placeRef.current.value = '';
-        placeLinkRef.current.value = '';
+        setPlace('');
+        setPlaceLink('');
     }, [props.isOpened])
 
     return (
@@ -34,7 +42,7 @@ function AddPlacePopup(props) {
                     required
                     minLength="2"
                     maxLength="30"
-                    ref={placeRef}
+                    onChange={handlePlaceInputChange}
                 />
                 <span className="popup__input-error popup-input-place-name-error"/>
                 <input
@@ -44,7 +52,7 @@ function AddPlacePopup(props) {
                     type="url"
                     className="popup__input popup__input_content_image-link"
                     required
-                    ref={placeLinkRef}
+                    onChange={handlePlaceLinkInputChange}
                 />
                 <span className="popup__input-error popup-input-image-link-error"/>
             </fieldset>

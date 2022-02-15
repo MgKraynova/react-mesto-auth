@@ -56,6 +56,19 @@ function App() {
             .catch(handleApiError);
     }, []);
 
+    useEffect(() => {
+
+        function closePopupByPressEsc(event) {
+            if (event.key === 'Escape') {
+                closeAllPopups();
+            }
+        }
+
+        document.addEventListener('keydown', closePopupByPressEsc);
+
+        return () => document.removeEventListener('keydown', closePopupByPressEsc);
+    }, [])
+
     function handleDeleteButtonClick(card) {
         setSelectedCard(card);
         setIsDeletePopupOpened(true);
@@ -96,23 +109,12 @@ function App() {
     function handleRegisterUser(email, password) {
 
         registerNewUser(email, password)
-            .then((res) => {
-                if (res.ok) {
-                    return res.json();
-                } else {
-                    setIsFailInfoTooltipOpened(true);
-                    if (res.status === 400) {
-                        return Promise.reject(`Ошибка: ${res.status} - некорректно заполнено одно из полей`);
-                    } else {
-                        return Promise.reject(`Ошибка: ${res.status}`);
-                    }
-                }
-            })
-            .then((res) => {
+            .then(() => {
                 setIsSuccessInfoTooltipOpened(true);
                 history.push("/sign-in");
             })
             .catch((err) => {
+                setIsFailInfoTooltipOpened(true);
                 handleApiError(err);
             })
     }
@@ -120,20 +122,6 @@ function App() {
     function handleLoginUser(email, password) {
 
         loginUser(email, password)
-            .then((res) => {
-                if (res.ok) {
-                    return res.json();
-                } else {
-                    setIsFailInfoTooltipOpened(true);
-                    if (res.status === 400) {
-                        return Promise.reject(`Ошибка: ${res.status} - не передано одно из полей`);
-                    } else if (res.status === 401) {
-                        return Promise.reject(`Ошибка: ${res.status} - пользователь с email не найден`);
-                    } else {
-                        return Promise.reject(`Ошибка: ${res.status}`);
-                    }
-                }
-            })
             .then((res) => {
                 if (res.token) {
                     localStorage.setItem('token', res.token);
@@ -143,6 +131,7 @@ function App() {
                 }
             })
             .catch((err) => {
+                setIsFailInfoTooltipOpened(true);
                 handleApiError(err);
             })
     }
@@ -151,19 +140,6 @@ function App() {
         if (localStorage.getItem('token')) {
             const token = localStorage.getItem('token');
             getContent(token)
-                .then((res) => {
-                    if (res.ok) {
-                        return res.json();
-                    } else {
-                        if (res.status === 400) {
-                            return Promise.reject(`Ошибка: ${res.status} - Токен не передан или передан не в том формате`);
-                        } else if (res.status === 401) {
-                            return Promise.reject(`Ошибка: ${res.status} -  Переданный токен некорректен`);
-                        } else {
-                            return Promise.reject(`Ошибка: ${res.status}`);
-                        }
-                    }
-                })
                 .then((res) => {
                     setLoggedIn(true);
                     setUserEmail(res.data.email);
