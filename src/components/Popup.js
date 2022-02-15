@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 
-function Popup({name, isOpened, onClose, children}) {
+function Popup({name, isOpened, onClose, divPopupClassName, children}) {
 
     useEffect(() => {
         if (!isOpened) return;
@@ -22,26 +22,9 @@ function Popup({name, isOpened, onClose, children}) {
         }
     }
 
-// создаем обработчик оверлея
-//     const handleOverlay = (e) => {
-//         if (e.target === e.currentTarget) {
-//             onClose();
-//         }
-//     }
-
-    function setDivPopupClassName() {
-        if (name === 'image') {
-            return 'popup__container';
-        } else if (name === 'infoTooltip') {
-            return 'popup__wrapper';
-        } else {
-            return 'popup__content';
-        }
-    }
-
     return (
         <div onClick={handleOverlay} className={`popup popup_type_${name} ${isOpened && 'popup_opened'}`}>
-            <div className={setDivPopupClassName()}>
+            <div className={divPopupClassName}>
                 <button
                     type="button"
                     className={`popup__close-button popup__close-button_type_${name} button`}

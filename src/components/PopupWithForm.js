@@ -4,7 +4,7 @@ import Popup from "./Popup";
 function PopupWithForm(props) {
     return (
 
-        <Popup name={props.name} isOpened={props.isOpened} onClose={props.onClose}>
+        <Popup name={props.name} isOpened={props.isOpened} onClose={props.onClose} divPopupClassName={'popup__content'}>
             <h2 className="popup__title">{props.title}</h2>
             <form
                 name={`popup-form-for-${props.name}`}
